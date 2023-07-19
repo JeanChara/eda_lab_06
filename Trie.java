@@ -5,17 +5,17 @@ public class Trie {
         root = new TrieNode();
     }
 
-    public void insert(String word) {
-        TrieNode current = root;
-        for (int i = 0; i < word.length(); i++) {
-            char ch = word.charAt(i);
-            int index = ch - 'a';
-            if (current.getChildren()[index] == null) {
-                current.getChildren()[index] = new TrieNode();
+   public void insert(String palabra) {
+        TrieNode trie_menor = root;
+        for (int i=0; i<palabra.length(); i++) {
+            char c = palabra.charAt(i);
+            int in = c - 'a';
+            if (trie_menor.getChildren()[in] == null) {
+                trie_menor.getChildren()[in] = new TrieNode();
             }
-            current = current.getChildren()[index];
+            trie_menor = trie_menor.getChildren()[in];
         }
-        current.setIsEndOfWord(true);
+        trie_menor.setIsEndOfWord(true);
     }
 
     public boolean search(String word) {
@@ -43,6 +43,7 @@ public class Trie {
         }
         return true;
     }
+
     public String reemplazar(String text) {
             
         StringBuilder result = new StringBuilder();
@@ -51,7 +52,7 @@ public class Trie {
         for (String word : words) {
             if (search(word)) { // Verificar si la palabra está en el Trie
                                            // Reemplazar la palabra por la deseada
-                result.append("REEMPLAZO"); // Reemplazar "REEMPLAZO" con la palabra deseada
+                result.append("REeMPLAZO"); // Reemplazar "REEMPLAZO" con la palabra deseada
             } else {
                 result.append(word);
             }
