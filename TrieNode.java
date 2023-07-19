@@ -11,7 +11,7 @@ public class TrieNode {
         return children;
     }
 
-    public boolean isIsEndOfWord() {
+    public boolean isEndOfWord() {
         return IsEndOfWord;
     }
 

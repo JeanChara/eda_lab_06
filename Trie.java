@@ -28,7 +28,7 @@ public class Trie {
             }
             current = current.getChildren()[index];
         }
-        return current.isIsEndOfWord();
+        return current.isEndOfWord();
     }
 
     public boolean startsWith(String prefix) {
