@@ -18,29 +18,36 @@ public class Trie {
         trie_menor.setIsEndOfWord(true);
     }
 
+    /*
+    * Inicia en la raiz del trie y lo recorre
+    * Comprueba si existe un nodo hijo correspondiente al código ASCII
+    * Si existe se pasa al siguiente nodo sino la búsqueda se detiene
+    * Al final se comprueba si el último nodo es el final de una palabra
+    */
+
     public boolean search(String word) {
         TrieNode current = root;
+
         for (int i = 0; i < word.length(); i++) {
             char ch = word.charAt(i);
-            int index = ch - 'a';
-            if (current.getChildren()[index] == null) {
-                return false;
-            }
-            current = current.getChildren()[index];
+            int indexASCII = ch - 'a';
+            if (current.getChildren()[indexASCII] == null) return false;
+                current = current.getChildren()[indexASCII];
         }
+
         return current.isEndOfWord();
     }
 
     public boolean startsWith(String prefix) {
         TrieNode current = root;
+        
         for (int i = 0; i < prefix.length(); i++) {
             char ch = prefix.charAt(i);
-            int index = ch - 'a';
-            if (current.getChildren()[index] == null) {
-                return false;
-            }
-            current = current.getChildren()[index];
+            int indexASCII = ch - 'a';
+            if (current.getChildren()[indexASCII] == null) return false;
+            current = current.getChildren()[indexASCII];
         }
+
         return true;
     }
 
