@@ -1,21 +1,21 @@
 public class TrieNode {
     private TrieNode[] children;
-    private boolean endOfWord;
+    private boolean IsEndOfWord;
 
     public TrieNode() {
         children = new TrieNode[26]; // una matriz de tamaño fijo para almacenar los hijos
-        endOfWord = false;
+        IsEndOfWord = false;
     }
 
     public TrieNode[] getChildren() {
         return children;
     }
 
-    public boolean isEndOfWord() {
-        return endOfWord;
+    public boolean isIsEndOfWord() {
+        return IsEndOfWord;
     }
 
-    public void setEndOfWord(boolean endOfWord) {
-        this.endOfWord = endOfWord;
+    public void setIsEndOfWord(boolean endOfWord) {
+        this.IsEndOfWord = endOfWord;
     }
 }
