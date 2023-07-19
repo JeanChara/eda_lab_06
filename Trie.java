@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.List;
+
 public class Trie {
     private TrieNode root;
 
