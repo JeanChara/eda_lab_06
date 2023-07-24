@@ -92,8 +92,44 @@ public class TriePrueba extends JFrame {
 		panel_buscar.add(text_buscar);
 		panel_buscar.add(boton_buscar);
 		
-		
+
 		JPanel panel_reemplazar = new JPanel();
+		
+		panel_reemplazar.setLayout(null);
+		JLabel label_reemplazar_1 = new JLabel("Reemplazar:");
+		label_reemplazar_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_reemplazar_1.setBounds(116, 165, 89, 14);
+		
+		JLabel label_reemplazar_2 = new JLabel("Reemplazar Palabra");
+		label_reemplazar_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_reemplazar_2.setBounds(116, 115, 350, 14);
+		
+		JLabel label_reemplazar_3 = new JLabel("Por:");
+		label_reemplazar_3.setHorizontalAlignment(SwingConstants.CENTER);
+		label_reemplazar_3.setBounds(116, 198, 89, 14);
+		
+		JButton boton_reemplazar = new JButton("Reemplazar");
+		boton_reemplazar.setBounds(230, 250, 110, 23);
+		boton_reemplazar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//
+			}
+		});
+		
+		JTextField text_reemplazar_1 = new JTextField();
+		text_reemplazar_1.setColumns(10);
+		text_reemplazar_1.setBounds(215, 162, 251, 20);
+		
+		JTextField text_reemplazar_2 = new JTextField();
+		text_reemplazar_2.setColumns(10);
+		text_reemplazar_2.setBounds(215, 195, 251, 20);
+		
+		panel_reemplazar.add(label_reemplazar_1);
+		panel_reemplazar.add(label_reemplazar_2);
+		panel_reemplazar.add(label_reemplazar_3);
+		panel_reemplazar.add(boton_reemplazar);
+		panel_reemplazar.add(text_reemplazar_1);
+		panel_reemplazar.add(text_reemplazar_2);
 		
 		
 		JPanel panel_principal = new JPanel();
