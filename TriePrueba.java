@@ -1,44 +1,42 @@
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import java.awt.event.*;
-
+import java.awt.EventQueue;
 import javax.swing.*;
 
-public class TriePrueba extends JFrame implements ActionListener{
-	private JLabel operaciones;
-	private JPanel panel1;
-	private JButton enviar,operacionInsertar,operacionBuscar,operacionReemplazar;
-	public static void main(String [] args) {
-		// sujeto a cambios
-		new TriePrueba();
-	}
-	public TriePrueba() {// sujeto a cambios
-		setTitle("Operaciones trie");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(900,720);
-		setLocationRelativeTo(null);
+
+public class TriePrueba extends JFrame {
+
+	private JTabbedPane contentPane;
+
+
+	public static void main(String[] args) {
+		try {
+			TriePrueba frame = new TriePrueba();
+			frame.setVisible(true);
+		} 
+		catch (Exception e) {
+			System.out.println(e);
+		}
 		
 		
-		createContents();
-		setVisible(true);
 	}
-	public void createContents() {
-		panel1 = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		operaciones = new JLabel("Operaciones");
-		operacionInsertar = new JButton("Insertar elemento");
-		operacionBuscar = new JButton("Buscar elemento");
-		operacionReemplazar = new JButton("Reemplazar elemento");
-		panel1.add(operaciones);
-		panel1.add(operacionInsertar);
-		panel1.add(operacionBuscar);
-		panel1.add(operacionReemplazar);
-		add(panel1);
-	}
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+
+	public TriePrueba() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 600, 450);
+		contentPane = new JTabbedPane();
 		
+		setContentPane(contentPane);
+		
+		JPanel panel = new JPanel();
+		contentPane.addTab("Texto", null, panel, null);
+		
+		JPanel panel_1 = new JPanel();
+		contentPane.addTab("Insertar", null, panel_1, null);
+		
+		JPanel panel_2 = new JPanel();
+		contentPane.addTab("Buscar", null, panel_2, null);
+		
+		JPanel panel_3 = new JPanel();
+		contentPane.addTab("Reemplazar", null, panel_3, null);
 	}
 
 }
