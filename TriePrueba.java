@@ -34,47 +34,48 @@ public class TriePrueba extends JFrame {
 		setContentPane(contentPane);
 		
 		// Creando Paneles...
-		JPanel panel_1 = new JPanel();
+		JPanel panel_insertar = new JPanel();
 
 		
-		JPanel panel_2 = new JPanel();
+		JPanel panel_buscar = new JPanel();
 
 		
-		JPanel panel_3 = new JPanel();
+		JPanel panel_reemplazar = new JPanel();
 		
 		
-		JPanel panelPrincipal = new JPanel();
-		panelPrincipal.setLayout(null);
+		JPanel panel_principal = new JPanel();
+		panel_principal.setLayout(null);
 		
-		JLabel label_1 = new JLabel("Texto actual");
-		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setBounds(119, 15, 350, 14);
+		JLabel label_principal_1 = new JLabel("Texto actual");
+		label_principal_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_principal_1.setBounds(119, 15, 350, 14);
 		
 		JTextArea textArea = new JTextArea(/* contenido de ejemplo */);
 		textArea.setBounds(60, 40, 465, 204);
 		
-		JLabel label_2 = new JLabel("Operaciones");
-		label_2.setBounds(119, 265, 350, 14);
-		label_2.setHorizontalAlignment(JLabel.CENTER);
+		JLabel label_principal_2 = new JLabel("Operaciones");
+		label_principal_2.setBounds(119, 265, 350, 14);
+		label_principal_2.setHorizontalAlignment(JLabel.CENTER);
 		
 		JPanel operaciones = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		operaciones.setBounds(119,290,350,33);
+		
 		JButton operacionInsertar = new JButton("Insertar");
 		operacionInsertar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				contentPane.setSelectedComponent(panel_1);
+				contentPane.setSelectedComponent(panel_insertar);
 			}
 		});
 		JButton operacionBuscar = new JButton("Buscar");
 		operacionBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				contentPane.setSelectedComponent(panel_2);
+				contentPane.setSelectedComponent(panel_buscar);
 			}
 		});
 		JButton operacionReemplazar = new JButton("Reemplazar");
 		operacionReemplazar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				contentPane.setSelectedComponent(panel_3);
+				contentPane.setSelectedComponent(panel_reemplazar);
 			}
 		});
 		
@@ -82,15 +83,16 @@ public class TriePrueba extends JFrame {
 		operaciones.add(operacionBuscar);
 		operaciones.add(operacionReemplazar);
 		
-		panelPrincipal.add(label_1);
-		panelPrincipal.add(textArea);
-		panelPrincipal.add(label_2);
-		panelPrincipal.add(operaciones);
+		panel_principal.add(label_principal_1);
+		panel_principal.add(textArea);
+		panel_principal.add(label_principal_2);
+		panel_principal.add(operaciones);
 
-		contentPane.addTab("Texto", null, panelPrincipal, null);
-		contentPane.addTab("Insertar", null, panel_1, null);
-		contentPane.addTab("Buscar", null, panel_2, null);
-		contentPane.addTab("Reemplazar", null, panel_3, null);
+		// agregando pestañas al frame
+		contentPane.addTab("Texto", null, panel_principal, null);
+		contentPane.addTab("Insertar", null, panel_insertar, null);
+		contentPane.addTab("Buscar", null, panel_buscar, null);
+		contentPane.addTab("Reemplazar", null, panel_reemplazar, null);
 
 	}
 }
