@@ -61,10 +61,37 @@ public class TriePrueba extends JFrame {
 		panel_insertar.add(label_insertar_2);
 		panel_insertar.add(text_insertar);
 		panel_insertar.add(boton_insertar);
-		
+
 		
 		JPanel panel_buscar = new JPanel();
 
+		panel_buscar.setLayout(null);
+		JLabel label_buscar_1 = new JLabel("Buscar Palabra");
+		label_buscar_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_buscar_1.setBounds(115, 115, 350, 14);
+		
+		JLabel label_buscar_2 = new JLabel("Buscar:");
+		label_buscar_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_buscar_2.setBounds(116, 165, 89, 14);
+		
+		JTextField text_buscar = new JTextField();
+		text_buscar.setBounds(215, 162, 251, 20);
+		text_buscar.setColumns(10);
+		
+		JButton boton_buscar = new JButton("Buscar");
+		boton_buscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//
+			}
+		});
+		
+		boton_buscar.setBounds(245, 228, 89, 23);
+		
+		panel_buscar.add(label_buscar_1);
+		panel_buscar.add(label_buscar_2);
+		panel_buscar.add(text_buscar);
+		panel_buscar.add(boton_buscar);
+		
 		
 		JPanel panel_reemplazar = new JPanel();
 		
