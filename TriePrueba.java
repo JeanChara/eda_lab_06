@@ -36,6 +36,32 @@ public class TriePrueba extends JFrame {
 		// Creando Paneles...
 		JPanel panel_insertar = new JPanel();
 
+		panel_insertar.setLayout(null);
+		JLabel label_insertar_1 = new JLabel("Insertar Palabra");
+		label_insertar_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_insertar_1.setBounds(115, 115, 350, 14);
+		
+		JLabel label_insertar_2 = new JLabel("Insertar:");
+		label_insertar_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_insertar_2.setBounds(116, 165, 89, 14);
+		
+		JTextField text_insertar = new JTextField();
+		text_insertar.setBounds(215, 162, 251, 20);
+		text_insertar.setColumns(10);
+		
+		JButton boton_insertar = new JButton("Insertar");
+		boton_insertar.setBounds(245, 228, 89, 23);
+		boton_insertar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//
+			}
+		});
+		
+		panel_insertar.add(label_insertar_1);
+		panel_insertar.add(label_insertar_2);
+		panel_insertar.add(text_insertar);
+		panel_insertar.add(boton_insertar);
+		
 		
 		JPanel panel_buscar = new JPanel();
 
