@@ -9,7 +9,7 @@ import javax.swing.*;
 public class TriePrueba extends JFrame {
 
 	private JTabbedPane contentPane;
-
+	private JTextArea textArea;
 
 	public static void main(String[] args) {
 		try {
@@ -22,7 +22,6 @@ public class TriePrueba extends JFrame {
 			System.out.println(e);
 		}
 		
-		
 	}
 
 	public TriePrueba() {
@@ -33,7 +32,6 @@ public class TriePrueba extends JFrame {
 		
 		setContentPane(contentPane);
 		
-		// Creando Paneles...
 		JPanel panel_insertar = new JPanel();
 
 		panel_insertar.setLayout(null);
@@ -53,7 +51,17 @@ public class TriePrueba extends JFrame {
 		boton_insertar.setBounds(245, 228, 89, 23);
 		boton_insertar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//
+				/*
+				try {
+					Trie.insert(palabra);
+					JOptionPane.showMessageDialog(null, "Palabra insertada con exito.");
+					text_insertar.setText(""); // vaciamos el texto
+					textArea.setText(Trie.toString()); // actualizamos el texto principal
+				}
+				catch (Exception e){
+					JOptionPane.showMessageDialog(null, "Error al insertar.");
+				}
+				*/
 			}
 		});
 		
@@ -81,7 +89,20 @@ public class TriePrueba extends JFrame {
 		JButton boton_buscar = new JButton("Buscar");
 		boton_buscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//
+				/*
+				try {
+					if(Trie.search(palabra)){
+						JOptionPane.showMessageDialog(null, "¡Palabra encontrada!");
+					}
+					else{
+						JOptionPane.showMessageDialog(null, "La palabra no se encuentra en el texto.");
+					}
+					text_buscar.setText(""); // vaciamos el texto
+				}
+				catch (Exception e){
+					JOptionPane.showMessageDialog(null, "Error al buscar.");
+				}
+				*/
 			}
 		});
 		
@@ -94,7 +115,7 @@ public class TriePrueba extends JFrame {
 		
 
 		JPanel panel_reemplazar = new JPanel();
-		
+
 		panel_reemplazar.setLayout(null);
 		JLabel label_reemplazar_1 = new JLabel("Reemplazar:");
 		label_reemplazar_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -108,14 +129,6 @@ public class TriePrueba extends JFrame {
 		label_reemplazar_3.setHorizontalAlignment(SwingConstants.CENTER);
 		label_reemplazar_3.setBounds(116, 198, 89, 14);
 		
-		JButton boton_reemplazar = new JButton("Reemplazar");
-		boton_reemplazar.setBounds(230, 250, 110, 23);
-		boton_reemplazar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//
-			}
-		});
-		
 		JTextField text_reemplazar_1 = new JTextField();
 		text_reemplazar_1.setColumns(10);
 		text_reemplazar_1.setBounds(215, 162, 251, 20);
@@ -123,14 +136,38 @@ public class TriePrueba extends JFrame {
 		JTextField text_reemplazar_2 = new JTextField();
 		text_reemplazar_2.setColumns(10);
 		text_reemplazar_2.setBounds(215, 195, 251, 20);
+
+		JButton boton_reemplazar = new JButton("Reemplazar");
+		boton_reemplazar.setBounds(230, 250, 110, 23);
+		boton_reemplazar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				/*
+				try {
+					if(Trie.toString() != Trie.reemplazar(palabra)){
+						JOptionPane.showMessageDialog(null, "¡Palabra reemplazada!");
+					}
+					else{
+						JOptionPane.showMessageDialog(null, "La palabra reemplazada es igual a la anterior.");
+					}
+					text_reemplazar_1.setText(""); // vaciamos los textos
+					text_reemplazar_2.setText("");
+
+					textArea.setText(Trie.toString()); // actualizamos el texto principal
+				}
+				catch (Exception e){
+					JOptionPane.showMessageDialog(null, "Error al reemplazar.");
+				}
+				*/
+			}
+		});
 		
 		panel_reemplazar.add(label_reemplazar_1);
 		panel_reemplazar.add(label_reemplazar_2);
 		panel_reemplazar.add(label_reemplazar_3);
-		panel_reemplazar.add(boton_reemplazar);
 		panel_reemplazar.add(text_reemplazar_1);
 		panel_reemplazar.add(text_reemplazar_2);
-		
+		panel_reemplazar.add(boton_reemplazar);
+
 		
 		JPanel panel_principal = new JPanel();
 		panel_principal.setLayout(null);
@@ -139,8 +176,9 @@ public class TriePrueba extends JFrame {
 		label_principal_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_principal_1.setBounds(119, 15, 350, 14);
 		
-		JTextArea textArea = new JTextArea(/* contenido de ejemplo */);
+		textArea = new JTextArea(/* Trie.toString() */);
 		textArea.setBounds(60, 40, 465, 204);
+		textArea.setEditable(false);
 		
 		JLabel label_principal_2 = new JLabel("Operaciones");
 		label_principal_2.setBounds(119, 265, 350, 14);
