@@ -3,9 +3,14 @@ import java.util.List;
 
 public class Trie {
     private TrieNode root;
+      private int contador;
+      private Map<Integer, String> wordMap;
+
 
     public Trie() {
         root = new TrieNode();
+        contador=0;
+        wordMap = new HashMap<>();
     }
 
    public void insert(String word) {
