@@ -8,17 +8,27 @@ public class Trie {
         root = new TrieNode();
     }
 
-   public void insert(String palabra) {
-        TrieNode trie_menor = root;
-        for (int i=0; i<palabra.length(); i++) {
-            char c = palabra.charAt(i);
-            int in = c - 'a';
-            if (trie_menor.getChildren()[in] == null) {
-                trie_menor.getChildren()[in] = new TrieNode();
+   public void insert(String word) {
+        TrieNode currentNode = root;
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+            int index = c - 'a';
+
+            if (currentNode.children[index] == null) {
+                currentNode.children[index] = new TrieNode();
             }
-            trie_menor = trie_menor.getChildren()[in];
+
+            currentNode = currentNode.children[index];
         }
-        trie_menor.setIsEndOfWord(true);
+
+        // Al llegar al final de la palabra, se marca como fin de palabra y se asigna el número
+        if (!currentNode.IsEndOfWord) {
+            currentNode.IsEndOfWord = true;
+            contador++;
+            currentNode.nume = contador;
+            currentNode.word = word;
+            wordMap.put(contador, word);
+        }
     }
 
     /*
