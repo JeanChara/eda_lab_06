@@ -10,6 +10,7 @@ public class TriePrueba extends JFrame {
 
 	private JTabbedPane contentPane;
 	private JTextArea textArea;
+	Trie Trie = new Trie();
 
 	public static void main(String[] args) {
 		try {
@@ -51,17 +52,13 @@ public class TriePrueba extends JFrame {
 		boton_insertar.setBounds(245, 228, 89, 23);
 		boton_insertar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*
-				try {
+				String palabra = text_insertar.getText();
+				
 					Trie.insert(palabra);
 					JOptionPane.showMessageDialog(null, "Palabra insertada con exito.");
 					text_insertar.setText(""); // vaciamos el texto
 					textArea.setText(Trie.toString()); // actualizamos el texto principal
-				}
-				catch (Exception e){
-					JOptionPane.showMessageDialog(null, "Error al insertar.");
-				}
-				*/
+				
 			}
 		});
 		
