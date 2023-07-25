@@ -1,5 +1,7 @@
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Trie {
     private TrieNode root;
@@ -85,5 +87,15 @@ public class Trie {
         }
 
         return result.toString().trim(); // Eliminar el espacio en blanco final y devolver el texto resultante
+    }
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        for (int i = 1; i <= contador; i++) {
+            String word = wordMap.get(i);
+            if (word != null) {
+                result.append(word).append(" ");
+            }
+        }
+        return result.toString();
     }
 }
