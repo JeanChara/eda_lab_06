@@ -46,18 +46,21 @@ public class Trie {
      * Al final se comprueba si el último nodo es el final de una palabra
      */
 
-    public boolean search(String word) {
+    public int search(String word) {
         TrieNode current = root;
+        int id = -1;
 
         for (int i = 0; i < word.length(); i++) {
             char ch = word.charAt(i);
             int indexASCII = ch - 'a';
             if (current.getChildren()[indexASCII] == null)
-                return false;
+                return -1;
             current = current.getChildren()[indexASCII];
         }
 
-        return current.getIsEndOfWord();
+        if (current.getIsEndOfWord())
+            id = current.getNume();
+        return id;
     }
 
     public boolean startsWith(String prefix) {

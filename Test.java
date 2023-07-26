@@ -8,7 +8,7 @@ public class Test {
         trie.insert("cereza");
 
         // Search for words in the trie
-        System.out.println(trie.search("manzana")); // true
+        System.out.println(trie.search("cereza")); // true
         System.out.println(trie.search("naranja")); // false
 
         // Check if the trie contains words with a given prefix
@@ -18,7 +18,7 @@ public class Test {
         System.out.println(trie.startsWith("d")); // false
 
         // Replace words in a string using the trie
-        trie.reemplazarPalabra("cereza", "peras");
+        //trie.reemplazarPalabra("cereza", "peras");
         System.out.println(trie.toString()); // "peras"
 
         // Insert more words into the trie
