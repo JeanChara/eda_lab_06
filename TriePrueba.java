@@ -133,24 +133,22 @@ public class TriePrueba extends JFrame {
 		boton_reemplazar.setBounds(230, 250, 110, 23);
 		boton_reemplazar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*
-				 * try {
-				 * if(Trie.toString() != Trie.reemplazar(palabra)){
-				 * JOptionPane.showMessageDialog(null, "¡Palabra reemplazada!");
-				 * }
-				 * else{
-				 * JOptionPane.showMessageDialog(null,
-				 * "La palabra reemplazada es igual a la anterior.");
-				 * }
-				 * text_reemplazar_1.setText(""); // vaciamos los textos
-				 * text_reemplazar_2.setText("");
-				 * 
-				 * textArea.setText(Trie.toString()); // actualizamos el texto principal
-				 * }
-				 * catch (Exception e){
-				 * JOptionPane.showMessageDialog(null, "Error al reemplazar.");
-				 * }
-				 */
+
+				try {
+					if (Trie.reemplazarPalabra(text_reemplazar_1.getText(), text_reemplazar_2.getText())) {
+						JOptionPane.showMessageDialog(null, "¡Palabra reemplazada!");
+					} else {
+						JOptionPane.showMessageDialog(null,
+								"No se pudo reemplazar la palabra.");
+					}
+					text_reemplazar_1.setText(""); // vaciamos los textos
+					text_reemplazar_2.setText("");
+
+					textArea.setText(Trie.toString()); // actualizamos el texto principal
+				} catch (Exception g) {
+					JOptionPane.showMessageDialog(null, "Error al reemplazar.");
+				}
+
 			}
 		});
 

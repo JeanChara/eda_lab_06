@@ -77,24 +77,14 @@ public class Trie {
         return true;
     }
 
-    public void reemplazarPalabra(String palabraBuscada, String palabraReemplazo) {
-        StringBuilder result = new StringBuilder();
-        List<String> words = Arrays.asList(palabraBuscada.split("\\s+")); 
-        for (String word : words) {
-            if (search(word)) {
-                result.append(palabraReemplazo); 
-            } else {
-                result.append(word);
-            }
-            result.append(" ");
+    public boolean reemplazarPalabra(String palabraBuscada, String palabraReemplazo) {
+        boolean exito = false;
+        int id = search(palabraBuscada);
+        if (id != -1) {
+            wordMap.put(id, palabraReemplazo);
+            exito = true;
         }
-        String textoReemplazado = result.toString().trim(); 
-        String[] palabrasReemplazadas = textoReemplazado.split("\\s+"); 
-        contador = 0;
-        wordMap.clear();
-        for (String palabra : palabrasReemplazadas) {
-            insert(palabra);
-        }
+        return exito;
     }
 
     public String toString() {
