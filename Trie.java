@@ -29,8 +29,8 @@ public class Trie {
         }
 
         // Al llegar al final de la palabra, se marca como fin de palabra y se asigna el número
-        if (!currentNode.IsEndOfWord) {
-            currentNode.IsEndOfWord = true;
+        if (!currentNode.getIsEndOfWord()) {
+            currentNode.setIsEndOfWord(true);;
             contador++;
             currentNode.nume = contador;
             currentNode.word = word;
@@ -55,7 +55,7 @@ public class Trie {
                 current = current.getChildren()[indexASCII];
         }
 
-        return current.isEndOfWord();
+        return current.getIsEndOfWord();
     }
 
     public boolean startsWith(String prefix) {

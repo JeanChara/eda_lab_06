@@ -13,14 +13,15 @@ public class TrieNode {
         return children;
     }
 
-    public boolean isEndOfWord() {
-        return IsEndOfWord;
+    public boolean getIsEndOfWord() {
+        return this.IsEndOfWord;
     }
 
     public void setIsEndOfWord(boolean endOfWord) {
         this.IsEndOfWord = endOfWord;
     }
-        public int getNume(){
+    
+    public int getNume(){
       return nume;
     }
 }
