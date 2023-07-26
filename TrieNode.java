@@ -20,8 +20,8 @@ public class TrieNode {
     public void setIsEndOfWord(boolean endOfWord) {
         this.IsEndOfWord = endOfWord;
     }
-    
-    public int getNume(){
-      return nume;
+
+    public int getNume() {
+        return nume;
     }
 }
