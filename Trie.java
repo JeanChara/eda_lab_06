@@ -74,22 +74,24 @@ public class Trie {
         return true;
     }
 
-    public String reemplazar(String text) {
-
+    public void reemplazarPalabra(String palabraBuscada, String palabraReemplazo) {
         StringBuilder result = new StringBuilder();
-        List<String> words = Arrays.asList(text.split("\\s+")); // Dividir el texto en palabras
-
+        List<String> words = Arrays.asList(palabraBuscada.split("\\s+")); 
         for (String word : words) {
-            if (search(word)) { // Verificar si la palabra está en el Trie
-                                // Reemplazar la palabra por la deseada
-                result.append("REeMPLAZO"); // Reemplazar "REEMPLAZO" con la palabra deseada
+            if (search(word)) {
+                result.append(palabraReemplazo); 
             } else {
                 result.append(word);
             }
             result.append(" ");
         }
-
-        return result.toString().trim(); // Eliminar el espacio en blanco final y devolver el texto resultante
+        String textoReemplazado = result.toString().trim(); 
+        String[] palabrasReemplazadas = textoReemplazado.split("\\s+"); 
+        contador = 0;
+        wordMap.clear();
+        for (String palabra : palabrasReemplazadas) {
+            insert(palabra);
+        }
     }
 
     public String toString() {
