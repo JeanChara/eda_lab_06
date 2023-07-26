@@ -83,21 +83,19 @@ public class TriePrueba extends JFrame {
 		JButton boton_buscar = new JButton("Buscar");
 		boton_buscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*
-				 * try {
-				 * if(Trie.search(palabra)){
-				 * JOptionPane.showMessageDialog(null, "¡Palabra encontrada!");
-				 * }
-				 * else{
-				 * JOptionPane.showMessageDialog(null,
-				 * "La palabra no se encuentra en el texto.");
-				 * }
-				 * text_buscar.setText(""); // vaciamos el texto
-				 * }
-				 * catch (Exception e){
-				 * JOptionPane.showMessageDialog(null, "Error al buscar.");
-				 * }
-				 */
+
+				try {
+					if (Trie.search(text_buscar.getText()) != -1) {
+						JOptionPane.showMessageDialog(null, "¡Palabra encontrada!");
+					} else {
+						JOptionPane.showMessageDialog(null,
+								"La palabra no se encuentra en el texto.");
+					}
+					text_buscar.setText(""); // vaciamos el texto
+				} catch (Exception f) {
+					JOptionPane.showMessageDialog(null, "Error al buscar.");
+				}
+
 			}
 		});
 
