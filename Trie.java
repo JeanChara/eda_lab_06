@@ -21,11 +21,11 @@ public class Trie {
             char c = word.charAt(i);
             int index = c - 'a';
 
-            if (currentNode.children[index] == null) {
-                currentNode.children[index] = new TrieNode();
+            if (currentNode.getChildren()[index] == null) {
+                currentNode.getChildren()[index] = new TrieNode();
             }
 
-            currentNode = currentNode.children[index];
+            currentNode = currentNode.getChildren()[index];
         }
 
         // Al llegar al final de la palabra, se marca como fin de palabra y se asigna el número
